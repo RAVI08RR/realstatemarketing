@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 // import { ArrowUpRight } from 'lucide-react';
 
 export default function RealEstateAdvisors() {
@@ -51,7 +52,7 @@ export default function RealEstateAdvisors() {
             {/* Description Box */}
             <div className="rounded-lg p-8">
               <p className="text-gray-800 leading-relaxed">
-                Experience a higher standard of service with Your Trusted Real Estate Advisors — experts in finding homes and investments that truly fit your vision.From prime locations to seamless transactions, we're here to ensure every decision you make is confident and rewarding.
+                Experience a higher standard of service with Your Trusted Real Estate Advisors — experts in finding homes and investments that truly fit your vision.From prime locations to seamless transactions, we&apos;re here to ensure every decision you make is confident and rewarding.
               </p>
             </div>
             
@@ -60,7 +61,13 @@ export default function RealEstateAdvisors() {
               <div className="flex-1">
                 <p className="text-gray-800 leading-relaxed">
                 At Your Trusted Real Estate Advisors, we make your property journey smooth, transparent, and stress-free from start to finish                </p>
-                <img className='mt-2' src='/images/round-text.png'/>
+                <Image 
+                  className='mt-2' 
+                  src='/images/round-text.png'
+                  alt="Round text decoration"
+                  width={100}
+                  height={100}
+                />
 
               </div>
               
@@ -68,7 +75,12 @@ export default function RealEstateAdvisors() {
               <div className="w-[50%] bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-300">
                 <div className="text-center">
                   <div className="text-yellow-700 text-2xl mb-1">
-                  <img src='/images/building.png'/>
+                  <Image 
+                    src='/images/building.png'
+                    alt="Building illustration"
+                    width={200}
+                    height={200}
+                  />
                  
 
                   </div>

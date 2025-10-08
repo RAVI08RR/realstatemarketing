@@ -100,7 +100,7 @@ export default function Testimonials() {
 
         {/* Quote */}
         <p className="text-gray-700 leading-relaxed mb-6">
-          "{testimonial.quote}"
+          &ldquo;{testimonial.quote}&rdquo;
         </p>
 
         {/* Rating */}
