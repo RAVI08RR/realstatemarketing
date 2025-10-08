@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Header() {
   return (
     <header className="bg-white shadow-sm " >
@@ -6,7 +8,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
-            <img src="/images/logo.svg" className="w-72"/>
+            <Image 
+              src="/images/logo.svg" 
+              alt="Kalsi Estate Logo"
+              width={288}
+              height={80}
+              className="w-72"
+            />
            
             </div>
           </div>

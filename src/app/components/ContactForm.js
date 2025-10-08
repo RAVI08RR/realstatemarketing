@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -42,7 +41,7 @@ export default function ContactForm() {
           {/* Left Side - Form */}
           <div className="max-w-md">
             <h2 className="text-[16px] md:text-5xl font-[600] text-white mb-4 leading-tight">
-              Let's Find Your Dream Property
+              Let&apos;s Find Your Dream Property
             </h2>
             <p className="text-gray-300 mb-8 text-lg">
               Get in touch with our experts today
