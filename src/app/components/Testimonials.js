@@ -11,7 +11,7 @@ export default function Testimonials() {
       id: 1,
       name: "Mohd Ali",
       role: "Marketing",
-      avatar: "/api/placeholder/60/60",
+      avatar: "/images/testimonil-1.png",
       quote: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti",
       rating: 5
     },
@@ -19,15 +19,15 @@ export default function Testimonials() {
       id: 2,
       name: "Albert Flores",
       role: "Designer",
-      avatar: "/api/placeholder/60/60",
-      quote: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae",
+      avatar: "/images/testimonil-1.png",
+      quote: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti",
       rating: 5
     },
     {
       id: 3,
       name: "Robert Fox",
       role: "Developer",
-      avatar: "/api/placeholder/60/60",
+      avatar: "/images/testimonil-1.png",
       quote: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit",
       rating: 5
     },
@@ -35,7 +35,7 @@ export default function Testimonials() {
       id: 4,
       name: "Sarah Johnson",
       role: "Manager",
-      avatar: "/api/placeholder/60/60",
+      avatar: "/images/testimonil-1.png",
       quote: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae",
       rating: 5
     }
@@ -74,7 +74,7 @@ export default function Testimonials() {
 
   const TestimonialCard = ({ testimonial }) => (
     <div className="px-4">
-      <div className="bg-gray-100 rounded-2xl p-8 h-full relative">
+      <div className="bg-[#F5F1EB] rounded-2xl p-8 h-full relative">
         {/* Quote Icon */}
         <div className="absolute top-6 right-6 text-gray-300">
           <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -84,13 +84,14 @@ export default function Testimonials() {
 
         {/* User Info */}
         <div className="flex items-center mb-6">
-          <div className="w-12 h-12 bg-gray-300 rounded-full mr-4 overflow-hidden">
-            {/* Placeholder avatar */}
-            <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-              <span className="text-white font-semibold text-lg">
-                {testimonial.name.charAt(0)}
-              </span>
-            </div>
+          <div className="w-12 h-12 rounded-full mr-4 overflow-hidden">
+            <Image
+              src={testimonial.avatar}
+              alt={`${testimonial.name} avatar`}
+              width={48}
+              height={48}
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
@@ -120,10 +121,10 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="lg:text-[22px] md:text-5xl font-bold text-gray-900 mb-4">
             People Love Living With Realtor
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-[16px]">
             Aliquam lacinia diam qua lacus euismod
           </p>
         </div>

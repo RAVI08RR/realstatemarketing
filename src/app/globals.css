@@ -28,7 +28,7 @@ body {
 }
 
 .card-client-no {
-  height: 176px;
+  height: 135px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -94,4 +94,9 @@ imonials Carousel Styles */
   background-image: url('/images/buy-sell-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.bg-amber-600 {
+    --tw-bg-opacity: 1;
+    background-color: #C08735 !important;
 }

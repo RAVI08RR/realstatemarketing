@@ -36,14 +36,14 @@ export default function ContactForm() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 container mx-auto  w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
-          <div className="max-w-md">
-            <h2 className="text-[16px] md:text-5xl font-[600] text-white mb-4 leading-tight">
+          <div className="max-w-[33rem]">
+            <h2 className="lg:text-[28px] md:text-5xl font-[600] text-white text-center mb-4 leading-tight">
               Let&apos;s Find Your Dream Property
             </h2>
-            <p className="text-gray-300 mb-8 text-lg">
+            <p className="text-gray-300 mb-8 text-lg text-center">
               Get in touch with our experts today
             </p>
 
@@ -95,7 +95,7 @@ export default function ContactForm() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-amber-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg"
+                className="w-full bg-[#C08735] text-white py-4 px-6 rounded-[30px] font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg"
               >
                 Submit Enquiry
               </button>

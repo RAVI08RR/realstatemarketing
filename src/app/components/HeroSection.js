@@ -15,7 +15,7 @@ export default function HeroSection() {
               with Kalsi Estate
             </h1>
             
-            <p className="text-[16px] md:text-xl mb-8 text-gray-200">
+            <p className="text-[16px]  mb-8 text-gray-200">
               Discover a wide range of properties that match your lifestyle and budget. 
               We make finding your dream home simple and stress-free.
             </p>
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           {/* Right Side - Contact Form */}
           <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-auto">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center">Contact Us</h2>
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>

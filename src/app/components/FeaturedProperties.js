@@ -130,8 +130,8 @@ const FeaturedProperties = () => {
           <button 
             className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
               property.featured 
-                ? 'bg-amber-500 text-white hover:bg-amber-600' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-gray-100 text-black hover:text-white hover:bg-amber-600' 
+                : 'bg-gray-100 text-black hover:text-white hover:bg-[#C08735]'
             }`}
           >
             View Details

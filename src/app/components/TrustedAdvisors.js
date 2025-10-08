@@ -9,10 +9,10 @@ export default function RealEstateAdvisors() {
       <div className="h-1 bg-black"></div>
       
       {/* Main Content */}
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-2 mt-5 mb-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-start">
           {/* Left Section */}
-          <div className='rounded-lg p-5 mt-[2rem]' >
+          <div className='rounded-lg p-5 mt-[0rem]' >
             <h1 className="text-[3.5rem] font-[600] mb-8 leading-[1.2]">
               Your Trusted Real
             
@@ -20,28 +20,28 @@ export default function RealEstateAdvisors() {
             </h1>
             
             {/* Stats Grid */}
-            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[3rem]">
+            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[4.6rem]">
               {/* Card 1 */}
               <div className="bg-white border border-gray-200 rounded-lg p-6 card-client-no">
-                <div className="text-5xl font-bold text-black mb-2">17k+</div>
+                <div className="text-5xl font-[600] text-black mb-2">17k+</div>
                 <p className="text-gray-700 text-sm">Satisfied Customers</p>
               </div>
               
               {/* Card 2 - Highlighted */}
-              <div className="bg-[#C08735] rounded-2xl p-6 card-client-no">
-                <div className="text-5xl font-bold text-white mb-2">25+</div>
+              <div className="bg-[#C08735] rounded-lg p-6 card-client-no">
+                <div className="text-5xl font-[600] text-white mb-2">25+</div>
                 <p className="text-white text-sm">Satisfied Customers</p>
               </div>
               
               {/* Card 3 */}
               <div className="bg-white border border-gray-200 rounded-lg p-6 card-client-no">
-                <div className="text-5xl font-bold text-black mb-2">150+</div>
+                <div className="text-5xl font-[600] text-black mb-2">150+</div>
                 <p className="text-gray-700 text-sm">Satisfied Customers</p>
               </div>
               
               {/* Card 4 */}
               <div className="bg-white border border-gray-200 rounded-lg p-6 card-client-no">
-                <div className="text-5xl font-bold text-black mb-2">25+</div>
+                <div className="text-5xl font-[600] text-black mb-2">25+</div>
                 <p className="text-gray-700 text-sm">Satisfied Customers</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function RealEstateAdvisors() {
               </div>
               
               {/* Logo Circle */}
-              <div className="w-[50%] bg-white rounded-full flex items-center justify-center flex-shrink-0 border border-gray-300">
+              <div className="w-[50%] bg-white rounded-full flex items-center justify-center flex-shrink-0  ">
                 <div className="text-center">
                   <div className="text-yellow-700 text-2xl mb-1">
                   <Image 

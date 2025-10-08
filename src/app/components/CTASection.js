@@ -20,21 +20,20 @@ export default function CTASection() {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Small Label */}
-        <div className="inline-block bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+        {/* <div className="inline-block bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-4 py-2 mb-6"> */}
           <span className="text-white text-sm font-medium tracking-wider uppercase">
             BUY OR SELL
           </span>
-        </div>
+        {/* </div> */}
 
         {/* Main Heading */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-          Looking to Buy a new property or sell an existing one?
-          <br />
-          <span className="text-amber-400">Homez provides an awesome solution!</span>
+        <h2 className="text-3xl md:text-4xl lg:text-[24px] font-[600] text-white mb-0 leading-[26px]">
+          Looking to Buy a new property or sell an existing one?<br/>
+        Homez provides an awesome solution!
         </h2>
 
         {/* CTA Button */}
-        <button className="bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg mt-6">
+        <button className="bg-[#C08735] text-white px-8 py-4 rounded-[30px] font-[400] hover:bg-amber-700 transition-colors duration-300 text-lg mt-6">
           Submit Property
         </button>
       </div>
