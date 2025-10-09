@@ -11,7 +11,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
-            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[2]">
+            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.5]">
               Find Your Perfect 
         <br/>
              Home with Kalsi Estate
