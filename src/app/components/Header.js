@@ -21,7 +21,7 @@ export default function Header() {
                 alt="Kalsi Estate Logo"
                 width={208}
                 height={80}
-                className="lg:w-72 w-50"
+                className="lg:w-50 w-50"
               />
             </div>
           </div>
@@ -45,8 +45,8 @@ export default function Header() {
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
             <button className="bg-[#C08735] text-white px-6 py-2 rounded-lg hover:bg-[#C08735]/80 transition-colors">
-              Get Consultation
-            </button>
+             Get a Free Consultation
+              </button>
           </div>
 
           {/* Mobile menu button */}
@@ -110,7 +110,8 @@ export default function Header() {
                   className="w-full bg-[#C08735] text-white px-6 py-3 rounded-lg hover:bg-[#C08735]/80 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Get Consultation
+                  Get a Free Consultation
+
                 </button>
               </div>
             </nav>

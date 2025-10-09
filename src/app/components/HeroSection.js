@@ -32,9 +32,9 @@ export default function HeroSection() {
             </div>
 
             {/* Info Boxes */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
               {/* Info Box 1 - Properties */}
-              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+              <div className="flex items-center space-x-3 bg-[#c0863500] bg-opacity-50  rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Home className="w-6 h-6 text-[black]" />
                 </div>
@@ -45,7 +45,7 @@ export default function HeroSection() {
               </div>
 
               {/* Info Box 2 - Clients */}
-              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50  rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-[black]" />
                 </div>
@@ -56,7 +56,7 @@ export default function HeroSection() {
               </div>
 
               {/* Info Box 3 - Experience */}
-              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50  rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-[black]" />
                 </div>

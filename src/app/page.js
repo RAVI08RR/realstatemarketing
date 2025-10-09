@@ -17,8 +17,9 @@ export default function Home() {
       <TrustedAdvisors />
      
       <WhyChooseUs />
-      <Realstatesoloution />
        <FeaturedProperties />
+      <Realstatesoloution />
+      
       <CTASection />
       
       <Testimonials />

@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import { MapPin, Home, Bed, Square } from 'lucide-react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,7 +13,13 @@ const FeaturedProperties = () => {
       title: "Claremont by Origin",
       location: "Sector 45, Gurgaon",
       image: "/images/f-1.png",
-      type: "residential"
+      type: "residential",
+      developer: "Origin Developers Pvt Ltd",
+      price: "1.20 Cr - 2.45 Cr",
+      reraId: "P51800053578",
+      propertyType: "Residential",
+      bhk: "2,3 BHK",
+      area: "850-1200 sqft"
     },
     {
       id: 2,
@@ -20,30 +27,53 @@ const FeaturedProperties = () => {
       location: "Borivali East, Mumbai",
       image: "/images/f-2.png",
       type: "commercial",
-      featured: true
+      featured: true,
+      developer: "CCI Projects Pvt Ltd",
+      price: "2.50 Cr - 3.68 Cr",
+      reraId: "P51800053578",
+      propertyType: "Residential",
+      bhk: "2,3 BHK",
+      area: "722-1114 sqft"
     },
     {
       id: 3,
       title: "Rivali Park Moonrise",
       location: "Golf Course Road",
       image: "/images/f-3.png",
-      type: "luxury"
+      type: "luxury",
+      developer: "Moonrise Developers Ltd",
+      price: "3.20 Cr - 4.85 Cr",
+      reraId: "P51800053579",
+      propertyType: "Residential",
+      bhk: "3,4 BHK",
+      area: "1200-1800 sqft"
     },
-     {
+    {
       id: 4,
-      title: "Rivali Park Moonrise",
-      location: "Golf Course Road",
+      title: "Premium Heights",
+      location: "Sector 62, Noida",
       image: "/images/f-1.png",
-      type: "luxury"
+      type: "luxury",
+      developer: "Heights Builders Pvt Ltd",
+      price: "1.80 Cr - 2.95 Cr",
+      reraId: "P51800053580",
+      propertyType: "Residential",
+      bhk: "2,3 BHK",
+      area: "950-1350 sqft"
     },
-      {
+    {
       id: 5,
-      title: "Rivali Park Moonrise",
-      location: "Golf Course Road",
+      title: "Sky Gardens",
+      location: "Andheri West, Mumbai",
       image: "/images/f-2.png",
-      type: "luxury"
+      type: "luxury",
+      developer: "Sky Developers Ltd",
+      price: "4.20 Cr - 6.50 Cr",
+      reraId: "P51800053581",
+      propertyType: "Residential",
+      bhk: "3,4 BHK",
+      area: "1400-2000 sqft"
     }
-
   ];
 
   const CustomNextArrow = ({ onClick }) => (
@@ -119,12 +149,45 @@ const FeaturedProperties = () => {
 
         {/* Property Details */}
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors duration-300">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#C08735] transition-colors duration-300">
             {property.title}
           </h3>
-          <p className="text-gray-600 text-sm mb-4">
-            {property.location}
-          </p>
+          
+          {/* Developer Info */}
+          <div className="flex items-center text-gray-600 text-sm mb-3">
+            <MapPin className="w-4 h-4 text-[#C08735] mr-2" />
+            <span>{property.developer}</span>
+          </div>
+          
+          {/* Price */}
+          <div className="mb-3">
+            <p className="text-lg font-semibold text-gray-900">
+              Price - {property.price}
+            </p>
+          </div>
+          
+          {/* RERA ID */}
+          <div className="mb-4">
+            <p className="text-[#C08735] font-medium text-sm">
+              RERA ID - {property.reraId}
+            </p>
+          </div>
+          
+          {/* Property Features */}
+          <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
+            <div className="flex items-center">
+              <Home className="w-4 h-4 text-[#C08735] mr-1" />
+              <span>{property.propertyType}</span>
+            </div>
+            <div className="flex items-center">
+              <Bed className="w-4 h-4 text-[#C08735] mr-1" />
+              <span>{property.bhk}</span>
+            </div>
+            <div className="flex items-center">
+              <Square className="w-4 h-4 text-[#C08735] mr-1" />
+              <span>{property.area}</span>
+            </div>
+          </div>
           
           {/* View Details Button */}
           <button 

@@ -5,26 +5,26 @@ const Realstatesoloution = () => {
   const solutions = [
     {
       imageSrc: "/images/rs-1.png",
-      title: "Real Estate Solutions",
+      title: "Commercial Properties",
       description: "Smart choices for every property need."
     },
     {
       imageSrc: "/images/rs-2.png",
-      title: "Find Your Perfect Property",
+      title: "Residential Properties",
       description: "Discover spaces that fit your lifestyle."
     },
     {
       imageSrc: "/images/rs-3.png",
-      title: "Commercial, Residential & Plot Properties",
+      title: "Plot Properties",
       description: "Discover spaces that fit your lifestyle."
     }
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto px-2">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-2 pb-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-5">
           <h1 className="text-[2rem] font-[800] text-gray-900 mb-0">
             Real Estate Solutions
           </h1>
@@ -41,7 +41,7 @@ const Realstatesoloution = () => {
               className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8 sm:p-10 flex flex-col items-center text-center"
             >
               {/* Image */}
-              <div className="mb-8 flex items-center justify-center">
+              <div className="mb-3 flex items-center justify-center">
                 <Image
                   src={solution.imageSrc}
                   alt={solution.title}
@@ -52,7 +52,7 @@ const Realstatesoloution = () => {
               </div>
 
               {/* Title */}
-              <h3 className="lg:text-[18px] sm:text-2xl font-[600] text-gray-900 mb-1 whitespace-pre-line lg:w-[200px]">
+              <h3 className="lg:text-[18px] sm:text-2xl font-[600] text-gray-900 mb-1 ">
                 {solution.title}
               </h3>
 
