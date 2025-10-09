@@ -20,7 +20,7 @@ export default function RealEstateAdvisors() {
             </h1>
             
             {/* Stats Grid */}
-            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[0rem]">
+            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[4.5rem]">
               {/* Card 1 */}
               <div className="bg-white border border-gray-200 rounded-lg p-6 card-client-no">
                 <div className="text-5xl font-[600] text-black mb-2">17k+</div>
