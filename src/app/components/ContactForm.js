@@ -23,7 +23,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center" id='contact-us'>
       {/* Background Image */}
       <div className="absolute inset-0">
         <div className="w-full h-full bg-[#252525] to-transparent relative">

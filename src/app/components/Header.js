@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-[100px]">
+        <div className="flex justify-between items-center h-[80px]">
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">

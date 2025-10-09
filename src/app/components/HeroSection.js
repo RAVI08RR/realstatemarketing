@@ -29,7 +29,9 @@ export default function HeroSection() {
                 </a>
               </button>
               <button className="border-2 border-[white] text-[#ffffff] px-6 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-[#C08735] transition-colors">
-                Contact Agent
+               <a href='#contact-us'> Contact Agent</a>
+               
+               
               </button>
             </div>
 
