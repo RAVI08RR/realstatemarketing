@@ -37,7 +37,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-700 transition-colors">
+            <button className="bg-[#C08735] text-white px-6 py-2 rounded-lg hover:bg-[#C08735] transition-colors">
               Get Consultation
             </button>
           </div>
