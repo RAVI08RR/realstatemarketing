@@ -29,12 +29,13 @@ export default function HeroSection() {
               </button>
             </div>
 
+            
         
           </div>
 
           {/* Right Side - Contact Form */}
           <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-auto">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center">Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center ">Get a Free Consultation</h2>
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
