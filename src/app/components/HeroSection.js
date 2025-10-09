@@ -8,10 +8,10 @@ export default function HeroSection() {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-full items-start">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
-            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.5]">
+            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.3]">
               Find Your Perfect 
         <br/>
              Home with Kalsi Estate
@@ -70,9 +70,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-white rounded-xl shadow-2xl p-8 max-w-md w-full mx-auto">
+          <div className="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-auto">
             <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center ">Get a Free Consultation</h2>
-            <form className="space-y-4">
+            <form className="space-y-3">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input

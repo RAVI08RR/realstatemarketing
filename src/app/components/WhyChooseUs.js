@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => (
             <div key={index} className="group relative">
               {/* Card Container */}
-              <div className="relative bg-black hover:border-[white] rounded-lg p-8 transition-all duration-300 hover:bg-black/80 h-full border-[#262626] border-[1px]">
+              <div className="relative bg-black hover:border-[#c3b5b5] rounded-lg p-8 transition-all duration-300 hover:bg-black/80 h-full border-[#262626] border-[0.8px]">
                 {/* Arrow Icon */}
                 <div className="absolute top-6 right-6 text-gray-600 group-hover:text-amber-600 transition-colors">
                   <Image 
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[14px] font-semibold text-white mb-2 group-hover:text-[#C08735] transition-colors text-center">
+                <h3 className="text-[16px] font-semibold text-white mb-2 group-hover:text-[#C08735] transition-colors text-center">
                   {feature.title}
                 </h3>
               </div>
