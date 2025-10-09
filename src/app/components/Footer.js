@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
             
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-600 text-[16px] leading-relaxed max-w-xs">
               Premium real estate solutions with trust, transparency, and excellence.
             </p>
 

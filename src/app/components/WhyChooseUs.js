@@ -3,22 +3,22 @@ import Image from 'next/image';
 export default function WhyChooseUs() {
   const features = [
     {
-      iconSrc: "/images/icons/icon-1.png",
+      iconSrc: "/images/wh-1.png",
       title: "Find Your Dream Home",
       description: "Discover properties tailored to your needs"
     },
     {
-      iconSrc: "/images/icons/icon-2.svg",
+      iconSrc: "/images/wh-2.png",
       title: "Unlock Property Value",
       description: "Maximize your investment potential"
     },
     {
-      iconSrc: "/images/icons/icon-3.svg",
+      iconSrc: "/images/wh-3.png",
       title: "Effortless Property Management",
       description: "Streamlined solutions for your properties"
     },
     {
-      iconSrc: "/images/icons/icon-4.svg",
+      iconSrc: "/images/wh-4.png",
       title: "Smart Investments. Informed Decisions",
       description: "Data-driven insights for better choices"
     }
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                       alt={feature.title}
                       width={32}
                       height={32}
-                      className="w-8 h-8 filter brightness-0 invert"
+                      className="w-20 h-20 "
                     />
                   
                 </div>
