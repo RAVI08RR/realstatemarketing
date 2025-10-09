@@ -11,9 +11,9 @@ export default function Header() {
             <Image 
               src="/images/logo.svg" 
               alt="Kalsi Estate Logo"
-              width={288}
+              width={208}
               height={80}
-              className="w-72"
+              className="lg:w-72 w-50"
             />
            
             </div>

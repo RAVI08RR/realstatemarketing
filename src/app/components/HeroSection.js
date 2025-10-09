@@ -1,3 +1,5 @@
+import { Home, Users, Award } from 'lucide-react';
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-[80vh] hero-section">
@@ -9,7 +11,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
-            <h1 className="text-[3rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 leading-[2]">
+            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[2]">
               Find Your Perfect 
         <br/>
              Home with Kalsi Estate
@@ -20,7 +22,7 @@ export default function HeroSection() {
               We make finding your dream home simple and stress-free.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-12">
               <button className="bg-[#C08735] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#C08735]/80 transition-colors">
                 Explore Properties
               </button>
@@ -29,7 +31,41 @@ export default function HeroSection() {
               </button>
             </div>
 
-            
+            {/* Info Boxes */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {/* Info Box 1 - Properties */}
+              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                  <Home className="w-6 h-6 text-[black]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg">500+</h3>
+                  <p className="text-gray-200 text-sm">Properties Listed</p>
+                </div>
+              </div>
+
+              {/* Info Box 2 - Clients */}
+              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                  <Users className="w-6 h-6 text-[black]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg">1000+</h3>
+                  <p className="text-gray-200 text-sm">Happy Clients</p>
+                </div>
+              </div>
+
+              {/* Info Box 3 - Experience */}
+              <div className="flex items-center space-x-3 bg-[#C08735] bg-opacity-50  rounded-lg p-4">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-[black]" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg">15+</h3>
+                  <p className="text-gray-200 text-sm">Years Experience</p>
+                </div>
+              </div>
+            </div>
         
           </div>
 
