@@ -160,10 +160,10 @@ const Realstatesoloution = () => {
         <div className="container mx-auto px-2">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-[3rem]  font-[600] text-gray-900 mb-0">
+            <h1 className="text-[2rem]  font-[800] text-gray-900 mb-0">
               Real Estate Solutions
             </h1>
-            <p className="text-gray-600 text-lg sm:text-xl">
+            <p className="text-gray-600 lg:text-[16px] sm:text-xl">
               Find Your Perfect Property
             </p>
           </div>
@@ -183,12 +183,12 @@ const Realstatesoloution = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="lg:text-[19px] sm:text-2xl font-[600] text-gray-900 mb-1 w-[76%]">
+                  <h3 className="lg:text-[18px] sm:text-2xl font-[600] text-gray-900 mb-1 whitespace-pre-line lg:w-[200px]">
                     {solution.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-base leading-relaxed">
+                  <p className="text-gray-600 text-[14px] leading-relaxed">
                     {solution.description}
                   </p>
                 </div>

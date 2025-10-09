@@ -13,14 +13,14 @@ export default function RealEstateAdvisors() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-start">
           {/* Left Section */}
           <div className='rounded-lg p-5 mt-[0rem]' >
-            <h1 className="text-[3.5rem] font-[600] mb-8 leading-[1.2]">
-              Your Trusted Real
+            <h1 className="text-[2.5rem] font-[600] mb-8 leading-[1.2]">
+              Your Trusted Real <br/>
             
               Estate <span className="text-[#C08735]">Advisors</span>
             </h1>
             
             {/* Stats Grid */}
-            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[4.6rem]">
+            <div className="grid lg:grid-cols-2 grid-cols-2 gap-6 mt-[0rem]">
               {/* Card 1 */}
               <div className="bg-white border border-gray-200 rounded-lg p-6 card-client-no">
                 <div className="text-5xl font-[600] text-black mb-2">17k+</div>
@@ -51,7 +51,7 @@ export default function RealEstateAdvisors() {
           <div className="space-y-8">
             {/* Description Box */}
             <div className="rounded-lg p-8">
-              <p className="text-gray-800 leading-relaxed">
+              <p className="text-gray-800 leading-relaxed text-[14px]">
                 Experience a higher standard of service with Your Trusted Real Estate Advisors — experts in finding homes and investments that truly fit your vision.From prime locations to seamless transactions, we&apos;re here to ensure every decision you make is confident and rewarding.
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function RealEstateAdvisors() {
             {/* Middle Section */}
             <div className="bg-gray-50 rounded-lg p-8 flex items-center justify-center gap-6">
               <div className="flex-1">
-                <p className="text-gray-800 leading-relaxed">
+                <p className="text-gray-800 leading-relaxed mb-2 text-[14px]">
                 At Your Trusted Real Estate Advisors, we make your property journey smooth, transparent, and stress-free from start to finish                </p>
                 <Image 
                   className='mt-2' 

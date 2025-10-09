@@ -9,13 +9,13 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
-            <h1 className="text-[3.5rem] md:text-5xl lg:text-[3.5rem] font-[600] mb-6 leading-[1.2]">
-              Find Your Perfect Home
-        
-              with Kalsi Estate
+            <h1 className="text-[3rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 leading-[2]">
+              Find Your Perfect 
+        <br/>
+             Home with Kalsi Estate
             </h1>
             
-            <p className="text-[16px]  mb-8 text-gray-200">
+            <p className="text-[14px]  mb-8 text-gray-200">
               Discover a wide range of properties that match your lifestyle and budget. 
               We make finding your dream home simple and stress-free.
             </p>

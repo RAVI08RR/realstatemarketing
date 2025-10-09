@@ -29,10 +29,10 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-[3.5rem] text-white font-[600] mb-3 leading-[1.2]">
+          <h1 className="text-[2.5rem] text-white font-[600] mb-3 leading-[1.2]">
             Why Choose Kalsi Estate
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-[16px]">
             Excellence in every aspect of real estate
           </p>
         </div>
