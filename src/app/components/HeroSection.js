@@ -24,7 +24,9 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-4 mb-12">
               <button className="bg-[#C08735] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#C08735]/80 transition-colors">
+              <a href='#featured-property'>
                 Explore Properties
+                </a>
               </button>
               <button className="border-2 border-[white] text-[#ffffff] px-6 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-[#C08735] transition-colors">
                 Contact Agent

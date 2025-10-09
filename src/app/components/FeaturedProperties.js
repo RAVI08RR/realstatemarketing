@@ -79,10 +79,10 @@ const FeaturedProperties = () => {
   const CustomNextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#C08735] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
       style={{ zIndex: 2 }}
     >
-      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[#C08735] group-hover:text-white  transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </button>
@@ -91,10 +91,10 @@ const FeaturedProperties = () => {
   const CustomPrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#C08735] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
       style={{ zIndex: 2 }}
     >
-      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[#C08735] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
       </svg>
     </button>
@@ -205,14 +205,14 @@ const FeaturedProperties = () => {
   );
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id='featured-property'>
       <div className="container mx-auto px-2">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Featured Properties
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-[16px] max-w-2xl mx-auto">
             Discover our handpicked selection of premium properties
           </p>
         </div>
