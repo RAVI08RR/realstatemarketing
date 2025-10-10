@@ -90,10 +90,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center" id='contact-us'>
+    <section className="relative lg:min-h-screen min-h-[85vh]  flex items-center" id='contact-us'>
       {/* Background Image */}
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-[#252525] to-transparent relative">
+        <div className="w-full lg:h-full h-[85vh] bg-[#252525] to-transparent relative">
           {/* City background simulation */}
           <div className="absolute right-0 top-0 w-1/2 h-full bg-contact-us">
             {/* Simple city skyline simulation */}
@@ -121,7 +121,7 @@ export default function ContactForm() {
                 </div>
               )}
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-4">
                 <div className="floating-input dark">
                   <input
                     type="text"

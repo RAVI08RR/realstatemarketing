@@ -27,7 +27,7 @@ export default function CTASection() {
         {/* </div> */}
 
         {/* Main Heading */}
-        <h2 className="text-[33px] md:text-[24px] lg:text-[34px] font-[600] text-white mb-0 lg:leading-[37px]">
+        <h2 className="text-[28px] md:text-[24px] lg:text-[34px] font-[600] text-white mb-0 lg:leading-[37px]">
           Looking to Buy a new property or sell an existing one? 
         Homez provides an awesome solution!
         </h2>

@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
                       alt={feature.title}
                       width={32}
                       height={32}
-                      className="w-20 h-20 "
+                      className="w-[4rem] h-[4rem] "
                     />
                   
                 </div>
