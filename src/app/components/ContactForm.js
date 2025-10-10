@@ -39,7 +39,7 @@ export default function ContactForm() {
         "budget range": formData.budget || "",
         "must-have": formData.requirements || "",
         language: formData.language,
-        Status: "NEW"
+        Status: "RAW"
       }
     };
 
