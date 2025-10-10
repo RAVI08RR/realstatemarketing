@@ -13,7 +13,7 @@ export default function RealEstateAdvisors() {
           {/* Left Section */}
           <div className='rounded-lg p-5 mt-[0rem]' >
             <h1 className="text-[2.5rem] font-[600] mb-8 leading-[1.2]">
-              Your Trusted Real <br className='md:none'/>
+              Your Trusted Real <br className='md:hidden'/>
             
               Estate <span className="text-[#AC9020]">Advisors</span>
             </h1>
