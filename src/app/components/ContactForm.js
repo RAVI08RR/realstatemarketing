@@ -103,7 +103,7 @@ export default function ContactForm() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto  w-full">
+      <div className="relative z-10 container mx-auto  w-full lg:p-0 p-[19px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
           <div className="max-w-[33rem]">

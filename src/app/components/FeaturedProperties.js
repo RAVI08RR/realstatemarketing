@@ -1,10 +1,12 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { MapPin, Home, Bed, Square } from 'lucide-react';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const FeaturedProperties = () => {
   const properties = [
@@ -76,66 +78,11 @@ const FeaturedProperties = () => {
     }
   ];
 
-  const CustomNextArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
-      style={{ zIndex: 2 }}
-    >
-      <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white  transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-  );
 
-  const CustomPrevArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
-      style={{ zIndex: 2 }}
-    >
-      <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-  );
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    nextArrow: <CustomNextArrow />,
-    prevArrow: <CustomPrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
-    customPaging: (i) => (
-      <div className="w-3 h-3 bg-gray-300 rounded-full hover:bg-amber-500 transition-colors duration-300"></div>
-    ),
-    dotsClass: "slick-dots custom-dots"
-  };
 
   const PropertyCard = ({ property }) => (
-    <div className="px-3">
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+    <div className="w-full">
+      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group w-full mx-3">
         {/* Property Image */}
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -206,7 +153,7 @@ const FeaturedProperties = () => {
 
   return (
     <section className="py-16 bg-white" id='featured-property'>
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -219,11 +166,57 @@ const FeaturedProperties = () => {
 
         {/* Properties Carousel */}
         <div className="relative">
-          <Slider {...settings} className='feature-proprty-slider'>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={3}
+            navigation={{
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
+            className="properties-swiper"
+          >
             {properties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
+              <SwiperSlide key={property.id}>
+                <PropertyCard property={property} />
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
+          
+          {/* Custom Navigation Buttons */}
+          <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+            <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+            <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>

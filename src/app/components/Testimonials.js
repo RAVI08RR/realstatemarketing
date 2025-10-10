@@ -1,9 +1,11 @@
 "use client";
 import React from 'react';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function Testimonials() {
   const testimonials = [
@@ -41,40 +43,11 @@ export default function Testimonials() {
     }
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
-    customPaging: (i) => (
-      <div className="w-3 h-3 bg-gray-300 rounded-full hover:bg-amber-500 transition-colors duration-300"></div>
-    ),
-    dotsClass: "slick-dots testimonial-dots"
-  };
+
 
   const TestimonialCard = ({ testimonial }) => (
-    <div className="px-4">
-      <div className="bg-[#F5F1EB] rounded-2xl p-8 h-full relative">
+    <div className="w-full">
+      <div className="bg-[#F5F1EB] rounded-2xl p-8 h-full relative mx-4">
         {/* Quote Icon */}
         <div className="absolute top-6 right-6 text-gray-300">
           <svg className="w-8 h-8" fill="#AC9020" viewBox="0 0 24 24">
@@ -131,11 +104,45 @@ export default function Testimonials() {
 
         {/* Testimonials Carousel */}
         <div className="relative">
-          <Slider {...settings}>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={3}
+            pagination={{
+              clickable: true,
+              bulletClass: 'swiper-pagination-bullet testimonial-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active testimonial-bullet-active',
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
+            className="testimonials-swiper pb-12"
+          >
             {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+              <SwiperSlide key={testimonial.id}>
+                <TestimonialCard testimonial={testimonial} />
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
       </div>
     </section>

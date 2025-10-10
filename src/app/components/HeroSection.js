@@ -117,7 +117,7 @@ export default function HeroSection() {
             </div>
 
             {/* Info Boxes */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:gap-0 gap-3" >
               {/* Info Box 1 - Properties */}
               <div className="flex items-center space-x-3 bg-[#c0863500] bg-opacity-50 rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
