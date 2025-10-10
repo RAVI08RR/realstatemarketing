@@ -90,7 +90,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[80vh] hero-section">
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-start">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
