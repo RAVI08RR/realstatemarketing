@@ -90,10 +90,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative lg:min-h-screen min-h-[85vh]  flex items-center" id='contact-us'>
+    <section className="relative lg:min-h-screen min-h-[100vh]  flex items-center" id='contact-us'>
       {/* Background Image */}
       <div className="absolute inset-0">
-        <div className="w-full lg:h-full h-[85vh] bg-[#252525] to-transparent relative">
+        <div className="w-full lg:h-full h-[100vh] bg-[#252525] lg:pb-0 pb-20 to-transparent relative">
           {/* City background simulation */}
           <div className="absolute right-0 top-0 w-1/2 h-full bg-contact-us">
             {/* Simple city skyline simulation */}
@@ -106,7 +106,7 @@ export default function ContactForm() {
       <div className="relative z-10 container mx-auto  w-full lg:p-0 p-[19px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
-          <div className="max-w-[33rem]">
+          <div className="lg:max-w-[33rem] max-w-auto">
             <h2 className="lg:text-[28px] md:text-5xl font-[600] text-white text-center mb-4 leading-tight">
               Let&apos;s Find Your Dream Property
             </h2>
