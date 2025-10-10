@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Kalsi Estate - Your Trusted Real Estate Advisors",
+  title: "DreamNest - Your Trusted Real Estate Advisors",
   description: "Experience a higher standard of service with Your Trusted Real Estate Advisors. Find your perfect property with luxury, trust and transparency in every deal.",
 };
 

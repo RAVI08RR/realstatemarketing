@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2">
              <Image 
                           src="/images/logo.svg" 
-                          alt="Kalsi Estate Logo"
+                          alt="DreamNest Logo"
                           width={288}
                           height={80}
                           className="w-72"
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <div className="border-t border-gray-200 pt-8 text-center">
           <p className="text-gray-600 text-sm">
-            © 2025 Kalsi Estate. Designed for trust and elegance.
+            © 2025 DreamNest. Designed for trust and elegance.
           </p>
         </div>
       </div>

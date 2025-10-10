@@ -97,7 +97,7 @@ export default function HeroSection() {
             <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.3]">
               Find Your Perfect 
               <br/>
-              Home with Kalsi Estate
+              Home with DreamNest
             </h1>
             
             <p className="text-[14px] mb-8 text-gray-200">

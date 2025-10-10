@@ -18,7 +18,7 @@ export default function Header() {
             <div className="flex items-center space-x-2">
               <Image 
                 src="/images/logo.svg" 
-                alt="Kalsi Estate Logo"
+                alt="DreamNest Logo"
                 width={208}
                 height={80}
                 className="lg:w-50 w-50"
