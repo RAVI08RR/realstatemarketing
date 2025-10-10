@@ -51,19 +51,20 @@ export default function WhyChooseUs() {
                     width={20}
                     height={20}
                     className="w-5 h-5"
+                    priority
                   />
                 </div>
 
                 {/* Icon */}
                 <div className="mb-8 m-auto flex justify-center items-center">
-                    <Image 
-                      src={feature.iconSrc}
-                      alt={feature.title}
-                      width={32}
-                      height={32}
-                      className="w-[4rem] h-[4rem] "
-                    />
-                  
+                  <Image 
+                    src={feature.iconSrc}
+                    alt={feature.title}
+                    width={64}
+                    height={64}
+                    className="w-[4rem] h-[4rem]"
+                    priority
+                  />
                 </div>
 
                 {/* Title */}
