@@ -106,12 +106,12 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <button className="bg-[#AC9020] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#C08735]/80 transition-colors">
+              <button className="bg-[#AC9020] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#AC9020]/80 transition-colors">
                 <a href='#featured-property'>
                   Explore Properties
                 </a>
               </button>
-              <button className="border-2 border-[white] text-[#ffffff] px-6 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-[#C08735] transition-colors">
+              <button className="border-2 border-[white] text-[#ffffff] px-6 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-[#AC9020] transition-colors">
                 <a href='#contact-us'>Contact Agent</a>
               </button>
             </div>
@@ -279,7 +279,7 @@ export default function HeroSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-[#C08735] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#C08735]/80 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full bg-[#AC9020] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#AC9020]/80 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {isSubmitting ? 'Sending...' : 'Get Free Consultation'}
               </button>

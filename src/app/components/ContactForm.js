@@ -230,7 +230,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-[#C08735] text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full bg-[#AC9020] text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {isSubmitting ? 'Submitting...' : 'Get a Free Consultation'}
               </button>

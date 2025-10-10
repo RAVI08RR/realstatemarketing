@@ -15,7 +15,7 @@ export default function RealEstateAdvisors() {
             <h1 className="text-[2.5rem] font-[600] mb-8 leading-[1.2]">
               Your Trusted Real <br/>
             
-              Estate <span className="text-[#C08735]">Advisors</span>
+              Estate <span className="text-[#AC9020]">Advisors</span>
             </h1>
             
             {/* Stats Grid */}
@@ -27,7 +27,7 @@ export default function RealEstateAdvisors() {
               </div>
               
               {/* Card 2 - Highlighted */}
-              <div className="bg-[#C08735] rounded-lg p-6 card-client-no">
+              <div className="bg-[#AC9020] rounded-lg p-6 card-client-no">
                 <div className="text-5xl font-[600] text-white mb-2">25+</div>
                 <p className="text-white text-sm">Satisfied Customers</p>
               </div>

@@ -27,7 +27,7 @@ const FeaturedProperties = () => {
       location: "Borivali East, Mumbai",
       image: "/images/f-2.png",
       type: "commercial",
-      featured: true,
+      featured: false,
       developer: "CCI Projects Pvt Ltd",
       price: "2.50 Cr - 3.68 Cr",
       reraId: "P51800053578",
@@ -79,10 +79,10 @@ const FeaturedProperties = () => {
   const CustomNextArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#C08735] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
       style={{ zIndex: 2 }}
     >
-      <svg className="w-6 h-6 text-[#C08735] group-hover:text-white  transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white  transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
       </svg>
     </button>
@@ -91,10 +91,10 @@ const FeaturedProperties = () => {
   const CustomPrevArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#C08735] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
       style={{ zIndex: 2 }}
     >
-      <svg className="w-6 h-6 text-[#C08735] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
       </svg>
     </button>
@@ -149,13 +149,13 @@ const FeaturedProperties = () => {
 
         {/* Property Details */}
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#C08735] transition-colors duration-300">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#AC9020] transition-colors duration-300">
             {property.title}
           </h3>
           
           {/* Developer Info */}
           <div className="flex items-center text-gray-600 text-sm mb-3">
-            <MapPin className="w-4 h-4 text-[#C08735] mr-2" />
+            <MapPin className="w-4 h-4 text-[#AC9020] mr-2" />
             <span>{property.developer}</span>
           </div>
           
@@ -168,7 +168,7 @@ const FeaturedProperties = () => {
           
           {/* RERA ID */}
           <div className="mb-4">
-            <p className="text-[#C08735] font-medium text-sm">
+            <p className="text-[#AC9020] font-medium text-sm">
               RERA ID - {property.reraId}
             </p>
           </div>
@@ -176,15 +176,15 @@ const FeaturedProperties = () => {
           {/* Property Features */}
           <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
             <div className="flex items-center">
-              <Home className="w-4 h-4 text-[#C08735] mr-1" />
+              <Home className="w-4 h-4 text-[#AC9020] mr-1" />
               <span>{property.propertyType}</span>
             </div>
             <div className="flex items-center">
-              <Bed className="w-4 h-4 text-[#C08735] mr-1" />
+              <Bed className="w-4 h-4 text-[#AC9020] mr-1" />
               <span>{property.bhk}</span>
             </div>
             <div className="flex items-center">
-              <Square className="w-4 h-4 text-[#C08735] mr-1" />
+              <Square className="w-4 h-4 text-[#AC9020] mr-1" />
               <span>{property.area}</span>
             </div>
           </div>
@@ -194,7 +194,7 @@ const FeaturedProperties = () => {
             className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 ${
               property.featured 
                 ? 'bg-gray-100 text-black hover:text-white hover:bg-amber-600' 
-                : 'bg-gray-100 text-black hover:text-white hover:bg-[#C08735]'
+                : 'bg-gray-100 text-black hover:text-white hover:bg-[#AC9020]'
             }`}
           >
             View Details

@@ -82,7 +82,7 @@ imonials Carousel Styles */
 }
 
 .testimonial-dots li.slick-active div {
-  background-color: #C08735 !important;
+  background-color: #AC9020 !important;
 }
 
 .bg-contact-us {
@@ -99,7 +99,7 @@ imonials Carousel Styles */
 
 .bg-amber-600 {
     --tw-bg-opacity: 1;
-    background-color: #C08735 !important;
+    background-color: #AC9020 !important;
 }/* Pho
 ne Input Styles */
 .PhoneInputCountry {
@@ -521,7 +521,10 @@ ean Phone Input Styling to match floating labels */
     margin-bottom: 1rem !important;
 }
 
-.bg-\[\#C08735\]{
+.bg-\[\#AC9020\]{
 background-color: #AC9020  !important;
 
+}
+.hover\:bg-\[\#AC9020\]:hover{
+  background-color: #AC9020  !important;
 }

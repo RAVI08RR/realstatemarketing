@@ -33,7 +33,7 @@ export default function CTASection() {
         </h2>
 
         {/* CTA Button */}
-        <button className="bg-[#C08735] text-white px-8 py-4 rounded-lg font-[400] hover:bg-amber-700 transition-colors duration-300 text-lg mt-6">
+        <button className="bg-[#AC9020] text-white px-8 py-4 rounded-lg font-[400] hover:bg-amber-700 transition-colors duration-300 text-lg mt-6">
          Get a Free Consultation
         </button>
       </div>

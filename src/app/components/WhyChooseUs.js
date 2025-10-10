@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[16px] font-semibold text-white mb-2 group-hover:text-[#C08735] transition-colors text-center">
+                <h3 className="text-[16px] font-semibold text-white mb-2 group-hover:text-[#AC9020] transition-colors text-center">
                   {feature.title}
                 </h3>
               </div>

@@ -44,7 +44,7 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <button className="bg-[#C08735] text-white px-6 py-2 rounded-lg hover:bg-[#C08735]/80 transition-colors">
+            <button className="bg-[#AC9020] text-white px-6 py-2 rounded-lg hover:bg-[#AC9020]/80 transition-colors">
              Get a Free Consultation
               </button>
           </div>
@@ -107,7 +107,7 @@ export default function Header() {
               {/* Mobile CTA Button */}
               <div className="pt-4">
                 <button 
-                  className="w-full bg-[#C08735] text-white px-6 py-3 rounded-lg hover:bg-[#C08735]/80 transition-colors"
+                  className="w-full bg-[#AC9020] text-white px-6 py-3 rounded-lg hover:bg-[#AC9020]/80 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get a Free Consultation
