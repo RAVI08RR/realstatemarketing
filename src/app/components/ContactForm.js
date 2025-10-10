@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -37,7 +39,7 @@ export default function ContactForm() {
         "budget range": formData.budget || "",
         "must-have": formData.requirements || "",
         language: formData.language,
-        Status: "NEW LEAD"
+        Status: "NEW"
       }
     };
 
@@ -112,7 +114,7 @@ export default function ContactForm() {
               Get in touch with our experts today
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 contact-form">
               {submitStatus.message && (
                 <div className={`p-3 rounded-lg ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                   {submitStatus.message}
@@ -145,13 +147,15 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
+                <PhoneInput
+                  placeholder="Enter phone number"
                   value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
+                  onChange={(value) => setFormData({...formData, phone: value || ''})}
+                  defaultCountry="IN"
+                  international
+                  countryCallingCodeEditable={false}
+                  className="w-full phone-input-contact"
+                  inputClassName="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                   required
                 />
               </div>

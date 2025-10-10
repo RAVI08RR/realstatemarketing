@@ -100,4 +100,152 @@ imonials Carousel Styles */
 .bg-amber-600 {
     --tw-bg-opacity: 1;
     background-color: #C08735 !important;
+}/* Pho
+ne Input Styles */
+.PhoneInputCountry {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+.PhoneInputCountrySelect {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.PhoneInputCountryIcon {
+  width: 1.25rem;
+  height: 1rem;
+}
+
+.PhoneInput {
+  display: flex;
+  align-items: center;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+/* Dark theme phone input for contact form */
+.contact-form .PhoneInputCountry {
+  background-color: #252525;
+  border-color: #374151;
+  color: white;
+}
+
+.contact-form .PhoneInputCountrySelect {
+  color: white;
+}
+
+.contact-form .PhoneInputCountrySelect:focus {
+  border-color: #f59e0b;
+}
+
+/* Hero form phone input */
+.hero-form .PhoneInputCountry {
+  background-color: white;
+  border-color: #d1d5db;
+}
+
+.hero-form .PhoneInputCountry:focus-within {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+
+
+
+.phone-input-hero .PhoneInput,
+.phone-input-contact .PhoneInput {
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+.phone-input-hero .PhoneInput {
+  border: 1px solid #d1d5db !important;
+  background: white !important;
+}
+
+.phone-input-contact input.PhoneInputInput {
+    color: #fff !important;
+    border: 1px solid #384152 !important;
+    background: transparent;
+    padding: 9px;
+    border-radius: .5rem;
+}
+
+.phone-input-hero  input.PhoneInputInput{
+   
+    border: 1px solid #d1d5db !important;
+    background: transparent;
+    padding: 9px;
+    border-radius: .5rem;
+}
+ 
+
+
+
+.phone-input-hero .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2) !important;
+}
+
+.phone-input-contact .PhoneInput {
+  border: 1px solid #374151 !important;
+  background: #252525 !important;
+}
+.phone-input-contact .PhoneInput::placeholder{
+color:white !important;
+
+}
+.phone-input-contact input.PhoneInputInput{
+  color: white !important;
+}
+
+
+.phone-input-contact .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+}
+
+
+.phone-input-contact .PhoneInputCountry {
+  padding: 0.5rem 0.75rem !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  border: 1px solid #384152 !important;
+}
+
+.phone-input-hero .PhoneInputCountry{
+    color: #374151 !important;
+    background: #fff !important;
+    border: 1px solid #d1d5db !important;
+}
+
+
+.phone-input-contact .PhoneInputCountry {
+  background: #252525 !important;
+  color: white !important;
+  border-right-color: #374151 !important;
+}
+
+.phone-input-hero .PhoneInputCountry {
+  background: white !important;
+  color: #374151 !important;
+}
+
+
+
+
+.phone-input-hero .PhoneInputCountryIcon,
+.phone-input-contact .PhoneInputCountryIcon {
+  width: 1.25rem !important;
+  height: 1rem !important;
+  border-radius: 2px !important;
 }

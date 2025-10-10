@@ -2,6 +2,8 @@
 
 import { Home, Users, Award } from 'lucide-react';
 import { useState } from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 
 export default function HeroSection() {
@@ -39,7 +41,7 @@ export default function HeroSection() {
         "budget range": formData.budget || "",
         "must-have": formData.requirements || "",
         language: formData.language,
-        Status: "HERO FORM LEAD"
+        Status: "NEW"
       }
     };
 
@@ -169,40 +171,61 @@ export default function HeroSection() {
               </div>
             )}
             
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  required
-                />
+            <form onSubmit={handleSubmit} className="space-y-3 hero-form">
+              {/* Name and Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    required
+                  />
+                </div>
               </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  required
-                />
+
+              {/* Phone and Preferred Location Row */}
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
+                <div>
+                  <PhoneInput
+                    placeholder="Enter phone number"
+                    value={formData.phone}
+                    onChange={(value) => setFormData({...formData, phone: value || ''})}
+                    defaultCountry="IN"
+                    international
+                    countryCallingCodeEditable={false}
+                    className="w-full phone-input-hero"
+                    inputClassName="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="preferredLocation"
+                    placeholder="Preferred Location"
+                    value={formData.preferredLocation}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  />
+                </div>
               </div>
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  required
-                />
-              </div>
+
+              {/* Property Type */}
               <div>
                 <select
                   name="propertyType"
@@ -217,16 +240,8 @@ export default function HeroSection() {
                   <option value="Commercial">Commercial</option>
                 </select>
               </div>
-              <div>
-                <input
-                  type="text"
-                  name="preferredLocation"
-                  placeholder="Preferred Location"
-                  value={formData.preferredLocation}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                />
-              </div>
+
+              {/* Budget Range */}
               <div>
                 <select
                   name="budget"
@@ -242,6 +257,8 @@ export default function HeroSection() {
                   <option value="5 Cr & Above">5 Cr & Above</option>
                 </select>
               </div>
+
+              {/* Requirements */}
               <div>
                 <textarea
                   name="requirements"
@@ -252,6 +269,8 @@ export default function HeroSection() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none"
                 ></textarea>
               </div>
+
+              {/* Language */}
               <div>
                 <select
                   name="language"
@@ -263,6 +282,7 @@ export default function HeroSection() {
                   <option value="Hindi">Hindi</option>
                 </select>
               </div>
+
               <button
                 type="submit"
                 disabled={isSubmitting}
