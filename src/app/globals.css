@@ -176,6 +176,7 @@ ne Input Styles */
     border: 1px solid #384152 !important;
     background: transparent;
     padding: 9px;
+    height: 42px !important;
     border-radius: .5rem;
 }
 
@@ -184,6 +185,7 @@ ne Input Styles */
     border: 1px solid #d1d5db !important;
     background: transparent;
     padding: 9px;
+     height: 42px !important;
     border-radius: .5rem;
 }
  
@@ -248,4 +250,278 @@ color:white !important;
   width: 1.25rem !important;
   height: 1rem !important;
   border-radius: 2px !important;
+}
+
+
+.phone-input-contact .phone-input-hero input,
+.phone-input-contact .phone-input-hero optgroup,
+.phone-input-contact .phone-input-hero select,
+.phone-input-contact .phone-input-hero textarea {
+ 
+ 
+    font-size: 13px;
+}
+/* Clean Floating Label Input Styles */
+.floating-input {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.floating-input input,
+.floating-input select,
+.floating-input textarea {
+  width: 100%;
+  /* padding: 1.25rem 1rem 0.75rem 1rem; */
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: white;
+  padding-left: 15px !important;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  outline: none;
+  height: 42px !important;
+  color: #374151;
+}
+
+.floating-input input:focus,
+.floating-input select:focus,
+.floating-input textarea:focus {
+    border-color: #164622;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, .1);
+    box-shadow: none !important;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 1rem;
+top: 8px;
+  font-size: 0.875rem;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 0.5rem;
+  z-index: 1;
+  font-weight: 400;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input select:focus + label,
+.floating-input select:not([value=""]) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #957e22;
+  font-weight: 500;
+}
+
+/* Dark theme floating inputs */
+.floating-input.dark input,
+.floating-input.dark select,
+.floating-input.dark textarea {
+  background: #252525;
+  border-color: #4b5563;
+  color: white;
+}
+
+.floating-input.dark input:focus, .floating-input.dark select:focus, .floating-input.dark textarea:focus {
+    border-color: #164622;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, .1);
+    box-shadow: none  !important;
+}
+
+.floating-input.dark label {
+  color: #9ca3af;
+  background: #252525;
+}
+
+.floating-input.dark input:focus + label,
+.floating-input.dark input:not(:placeholder-shown) + label,
+.floating-input.dark select:focus + label,
+.floating-input.dark select:not([value=""]) + label,
+.floating-input.dark textarea:focus + label,
+.floating-input.dark textarea:not(:placeholder-shown) + label {
+  color: #957e22;
+  background: #252525;
+}
+
+/* Floating phone input styles */
+.floating-phone-input {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.floating-phone-input .PhoneInput {
+  padding-top: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+}
+
+.floating-phone-input .PhoneInput:focus-within {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+.floating-phone-input .PhoneInputInput {
+  padding: 0.5rem 0.75rem !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.floating-phone-input label {
+  position: absolute;
+  left: 0.75rem;
+  top: 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: white;
+  padding: 0 0.25rem;
+  z-index: 1;
+}
+
+.floating-phone-input .PhoneInput:focus-within + label,
+.floating-phone-input .PhoneInputInput:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+/* Dark theme floating phone input */
+.floating-phone-input.dark .PhoneInput {
+  background: #252525;
+  border-color: #374151;
+}
+
+.floating-phone-input.dark .PhoneInputInput {
+  background: #252525 !important;
+  color: white !important;
+}
+
+.floating-phone-input.dark .PhoneInputCountry {
+  background: #252525 !important;
+  color: white !important;
+}
+
+.floating-phone-input.dark label {
+  color: #9ca3af;
+  background: #252525;
+}
+
+.floating-phone-input.dark .PhoneInput:focus-within + label,
+.floating-phone-input.dark .PhoneInputInput:not(:placeholder-shown) + label {
+  color: #f59e0b;
+  background: #252525;
+}/*
+ Improved Phone Input Styles */
+.phone-input-hero .PhoneInput {
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  background: white !important;
+  overflow: hidden !important;
+}
+
+.phone-input-hero .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2) !important;
+}
+
+.phone-input-hero .PhoneInputCountry {
+  padding: 0.5rem 0.75rem !important;
+  /* border: none !important; */
+  background: white !important;
+  /* border-right: 1px solid #e5e7eb !important; */
+      height: 42px;
+    border-radius: .5rem;
+}
+
+.phone-input-contact .PhoneInput {
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid #374151 !important;
+  border-radius: 0.5rem !important;
+  background: #252525 !important;
+  overflow: hidden !important;
+}
+
+.phone-input-contact .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+}
+
+.phone-input-contact .PhoneInputCountry {
+  padding: 0.75rem !important;
+  border: none !important;
+  background: #252525 !important;
+  color: white !important;
+
+}/* Cl
+ean Phone Input Styling to match floating labels */
+.phone-input-hero .PhoneInput {
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.75rem !important;
+  background: white !important;
+  padding: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.phone-input-hero .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1) !important;
+}
+
+.phone-input-hero .PhoneInputCountry {
+  padding: 1rem !important;
+  /* border: none !important; */
+  background: white !important;
+  /* border-right: 1px solid #e5e7eb !important; */
+}
+
+.phone-input-contact .PhoneInput {
+  border: 2px solid #4b5563 !important;
+  border-radius: 0.75rem !important;
+  background: #374151 !important;
+  padding: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.phone-input-contact .PhoneInput:focus-within {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1) !important;
+}
+
+.phone-input-contact .PhoneInputCountry {
+  padding: 1rem !important;
+
+  background: #252525 !important;
+  color: white !important;
+  height: 42px !important;
+      border: 1px solid #313640 !important;
+  
+}
+
+.floating-input.dark {
+    margin-bottom: 1rem !important;
+}
+
+.floating-input {
+    margin-bottom: 1rem !important;
+    position: relative;
+}
+
+.phone-input-contact.PhoneInput {
+    margin-bottom: 1rem !important;
+}
+
+.bg-\[\#C08735\]{
+background-color: #AC9020  !important;
+
 }

@@ -5,7 +5,6 @@ import { useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
-
 export default function HeroSection() {
   const [formData, setFormData] = useState({
     name: '',
@@ -45,16 +44,15 @@ export default function HeroSection() {
       }
     };
 
-    const response = await fetch(apiUrl, {
+    await fetch(apiUrl, {
       method: 'POST',
-      mode: 'no-cors', // This bypasses CORS but you won't get response data
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     });
 
-    // With no-cors mode, we can't read the response, so we assume success
     return { success: true };
   };
 
@@ -89,44 +87,39 @@ export default function HeroSection() {
       setIsSubmitting(false);
     }
   };
+
   return (
     <section className="relative min-h-[80vh] hero-section">
-      {/* Background overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-60"></div> */}
-      
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-full items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-start">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
             <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.3]">
               Find Your Perfect 
-        <br/>
-             Home with Kalsi Estate
+              <br/>
+              Home with Kalsi Estate
             </h1>
             
-            <p className="text-[14px]  mb-8 text-gray-200">
+            <p className="text-[14px] mb-8 text-gray-200">
               Discover a wide range of properties that match your lifestyle and budget. 
               We make finding your dream home simple and stress-free.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <button className="bg-[#C08735] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#C08735]/80 transition-colors">
-              <a href='#featured-property'>
-                Explore Properties
+              <button className="bg-[#AC9020] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#C08735]/80 transition-colors">
+                <a href='#featured-property'>
+                  Explore Properties
                 </a>
               </button>
               <button className="border-2 border-[white] text-[#ffffff] px-6 py-3 rounded-lg text-base font-semibold hover:bg-white hover:text-[#C08735] transition-colors">
-               <a href='#contact-us'> Contact Agent</a>
-               
-               
+                <a href='#contact-us'>Contact Agent</a>
               </button>
             </div>
 
             {/* Info Boxes */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
               {/* Info Box 1 - Properties */}
-              <div className="flex items-center space-x-3 bg-[#c0863500] bg-opacity-50  rounded-lg p-0">
+              <div className="flex items-center space-x-3 bg-[#c0863500] bg-opacity-50 rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Home className="w-6 h-6 text-[black]" />
                 </div>
@@ -137,7 +130,7 @@ export default function HeroSection() {
               </div>
 
               {/* Info Box 2 - Clients */}
-              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50  rounded-lg p-0">
+              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50 rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Users className="w-6 h-6 text-[black]" />
                 </div>
@@ -148,7 +141,7 @@ export default function HeroSection() {
               </div>
 
               {/* Info Box 3 - Experience */}
-              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50  rounded-lg p-0">
+              <div className="flex items-center space-x-3 bg-transperent bg-opacity-50 rounded-lg p-0">
                 <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-[black]" />
                 </div>
@@ -158,7 +151,6 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-        
           </div>
 
           {/* Right Side - Contact Form */}
@@ -171,116 +163,117 @@ export default function HeroSection() {
               </div>
             )}
             
-            <form onSubmit={handleSubmit} className="space-y-3 hero-form">
+            <form onSubmit={handleSubmit} className="space-y-2 hero-form">
               {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="floating-input">
                   <input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder=" "
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     required
                   />
+                  <label>Your Name</label>
                 </div>
-                <div>
+                <div className="floating-input">
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email Address"
+                    placeholder=" "
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                     required
                   />
+                  <label>Email Address</label>
                 </div>
               </div>
 
               {/* Phone and Preferred Location Row */}
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                 <div>
                   <PhoneInput
-                    placeholder="Enter phone number"
+                    placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(value) => setFormData({...formData, phone: value || ''})}
                     defaultCountry="IN"
                     international
                     countryCallingCodeEditable={false}
-                    className="w-full phone-input-hero"
-                    inputClassName="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="phone-input-hero"
+                    inputClassName="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none text-sm"
                     required
                   />
                 </div>
-                <div>
+                <div className="floating-input">
                   <input
                     type="text"
                     name="preferredLocation"
-                    placeholder="Preferred Location"
+                    placeholder=" "
                     value={formData.preferredLocation}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                   />
+                  <label>Preferred Location</label>
                 </div>
               </div>
 
               {/* Property Type */}
-              <div>
+              <div className="floating-input mb-2">
                 <select
                   name="propertyType"
                   value={formData.propertyType}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
-                  <option value="">What type of property are you looking for?</option>
+                  <option value=""></option>
                   <option value="Apartment">Apartment</option>
                   <option value="Villa">Villa</option>
                   <option value="Plot">Plot</option>
                   <option value="Commercial">Commercial</option>
                 </select>
+                <label>Property Type</label>
               </div>
 
               {/* Budget Range */}
-              <div>
+              <div className="floating-input">
                 <select
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
-                  <option value="">Select Budget Range</option>
+                  <option value=""></option>
                   <option value="Under 50 Lakhs">Under 50 Lakhs</option>
                   <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
                   <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
                   <option value="2 Cr - 5 Cr">2 Cr - 5 Cr</option>
                   <option value="5 Cr & Above">5 Cr & Above</option>
                 </select>
+                <label>Budget Range</label>
               </div>
 
               {/* Requirements */}
-              <div>
+              <div className="floating-input">
                 <textarea
                   name="requirements"
-                  placeholder="Specific Requirements (e.g., 3BHK, Garden, Pool, etc.)"
-                  rows="2"
+                  placeholder=" "
+                  rows="3"
                   value={formData.requirements}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none"
+                  className="resize-none"
                 ></textarea>
+                <label>Specific Requirements</label>
               </div>
 
               {/* Language */}
-              <div>
+              <div className="floating-input">
                 <select
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 >
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
                 </select>
+                <label>Language</label>
               </div>
 
               <button
@@ -294,9 +287,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-
     </section>
   );
 }

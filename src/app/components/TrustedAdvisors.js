@@ -6,7 +6,6 @@ export default function RealEstateAdvisors() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <div className="h-1 bg-black"></div>
       
       {/* Main Content */}
       <div className="container mx-auto px-2 mt-5 mb-5">

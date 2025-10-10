@@ -114,115 +114,116 @@ export default function ContactForm() {
               Get in touch with our experts today
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4 contact-form">
+            <form onSubmit={handleSubmit} className="space-y-2 contact-form">
               {submitStatus.message && (
-                <div className={`p-3 rounded-lg ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                   {submitStatus.message}
                 </div>
               )}
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
+                <div className="floating-input dark">
                   <input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder=" "
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                     required
                   />
+                  <label>Your Name</label>
                 </div>
-                <div>
+                <div className="floating-input dark">
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email Address"
+                    placeholder=" "
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                     required
                   />
+                  <label>Email Address</label>
                 </div>
               </div>
 
               <div>
                 <PhoneInput
-                  placeholder="Enter phone number"
+                  placeholder="Phone Number"
                   value={formData.phone}
                   onChange={(value) => setFormData({...formData, phone: value || ''})}
                   defaultCountry="IN"
                   international
                   countryCallingCodeEditable={false}
-                  className="w-full phone-input-contact"
-                  inputClassName="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
+                  className="phone-input-contact"
+                  inputClassName="w-full px-4 py-4 bg-gray-800 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none text-sm"
                   required
                 />
               </div>
 
-              <div>
+              <div className="floating-input dark">
                 <select
                   name="propertyType"
                   value={formData.propertyType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                 >
-                  <option value="">What type of property are you looking for?</option>
+                  <option value=""></option>
                   <option value="Apartment">Apartment</option>
                   <option value="Villa">Villa</option>
                   <option value="Plot">Plot</option>
                   <option value="Commercial">Commercial</option>
                 </select>
+                <label>Property Type</label>
               </div>
 
-              <div>
+              <div className="floating-input dark">
                 <input
                   type="text"
                   name="preferredLocation"
-                  placeholder="Preferred Location"
+                  placeholder=" "
                   value={formData.preferredLocation}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                 />
+                <label>Preferred Location</label>
               </div>
 
-              <div>
+              <div className="floating-input dark">
                 <select
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors"
                 >
-                  <option value="">Select Budget Range</option>
+                  <option value=""></option>
                   <option value="Under 50 Lakhs">Under 50 Lakhs</option>
                   <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
                   <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
                   <option value="2 Cr - 5 Cr">2 Cr - 5 Cr</option>
                   <option value="5 Cr & Above">5 Cr & Above</option>
                 </select>
+                <label>Budget Range</label>
               </div>
 
-              <div>
+              <div className="floating-input dark">
                 <textarea
                   name="requirements"
-                  placeholder="Specific Requirements (e.g., 3BHK, Garden, Pool, etc.)"
+                  placeholder=" "
                   rows="3"
                   value={formData.requirements}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                  className="resize-none"
                 ></textarea>
+                <label>Specific Requirements</label>
               </div>
 
-              <div>
+              <div className="floating-input dark">
                 <select
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#252525] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-amber-500 transition-colors"
                 >
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
                 </select>
+                <label>Language</label>
               </div>
 
               {/* Submit Button */}
