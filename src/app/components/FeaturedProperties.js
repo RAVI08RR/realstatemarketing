@@ -82,7 +82,7 @@ const FeaturedProperties = () => {
 
   const PropertyCard = ({ property }) => (
     <div className="w-full">
-      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group w-full mx-3">
+      <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group lg:w-full  w-[90%] mx-auto lg:mx-3">
         {/* Property Image */}
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -193,7 +193,7 @@ const FeaturedProperties = () => {
               },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 20,
               },
             }}
             className="properties-swiper"
@@ -206,13 +206,13 @@ const FeaturedProperties = () => {
           </Swiper>
           
           {/* Custom Navigation Buttons */}
-          <button className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+          <button className="swiper-button-prev-custom absolute lg:left-4 left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
             <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           
-          <button className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+          <button className="swiper-button-next-custom absolute lg:right-4 right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#AC9020] rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
             <svg className="w-6 h-6 text-[#AC9020] group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
