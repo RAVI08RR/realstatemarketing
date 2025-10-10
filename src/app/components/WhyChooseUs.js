@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 
 export default function WhyChooseUs() {
   const features = [
@@ -45,25 +45,23 @@ export default function WhyChooseUs() {
               <div className="relative bg-black hover:border-[#c3b5b5] rounded-lg p-8 transition-all duration-300 hover:bg-black/80 h-full border-[#262626] border-[0.8px]">
                 {/* Arrow Icon */}
                 <div className="absolute top-6 right-6 text-gray-600 group-hover:text-amber-600 transition-colors">
-                  <Image 
+                  <img 
                     src="/images/arrow-icon.svg" 
                     alt="Arrow"
                     width={20}
                     height={20}
                     className="w-5 h-5"
-                    priority
                   />
                 </div>
 
                 {/* Icon */}
                 <div className="mb-8 m-auto flex justify-center items-center">
-                  <Image 
+                  <img 
                     src={feature.iconSrc}
                     alt={feature.title}
                     width={64}
                     height={64}
                     className="w-[4rem] h-[4rem]"
-                    priority
                   />
                 </div>
 
