@@ -1,6 +1,92 @@
+"use client";
+
 import { Home, Users, Award } from 'lucide-react';
+import { useState } from 'react';
+
 
 export default function HeroSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    propertyType: '',
+    preferredLocation: '',
+    budget: '',
+    requirements: '',
+    language: 'English'
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const submitHeroFormData = async (formData) => {
+    const apiUrl = "https://script.google.com/macros/s/AKfycbzjfJIq4C1YlhKROMGY2AmsLTK-uvAUGaxNSbcgtcTycRzViy-j6V25c1ZAC0tLc9y5/exec";
+    
+    const payload = {
+      SheetID: "105KuxnDPJqhBSk0xGiLfro6KVbq4OMxTTuET-eSSj6k",
+      Field: {
+        Name: formData.name,
+        Email: formData.email,
+        Phone: formData.phone,
+        "kind of property": formData.propertyType || "",
+        "preferred location": formData.preferredLocation || "",
+        "budget range": formData.budget || "",
+        "must-have": formData.requirements || "",
+        language: formData.language,
+        Status: "HERO FORM LEAD"
+      }
+    };
+
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      mode: 'no-cors', // This bypasses CORS but you won't get response data
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    // With no-cors mode, we can't read the response, so we assume success
+    return { success: true };
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ success: false, message: '' });
+
+    try {
+      await submitHeroFormData(formData);
+      setSubmitStatus({ 
+        success: true, 
+        message: 'Thank you! We will contact you soon.' 
+      });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        propertyType: '',
+        preferredLocation: '',
+        budget: '',
+        requirements: '',
+        language: 'English'
+      });
+    } catch (error) {
+      console.error('Hero form submission error:', error);
+      setSubmitStatus({ 
+        success: false, 
+        message: 'Error submitting form. Please try again.' 
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section className="relative min-h-[80vh] hero-section">
       {/* Background overlay */}
@@ -75,51 +161,114 @@ export default function HeroSection() {
 
           {/* Right Side - Contact Form */}
           <div className="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-auto">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center ">Get a Free Consultation</h2>
-            <form className="space-y-3">
+            <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center">Get a Free Consultation</h2>
+            
+            {submitStatus.message && (
+              <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                {submitStatus.message}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input
                   type="text"
-                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  placeholder="Your name"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input
                   type="email"
-                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  placeholder="Your email"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                 <input
                   type="tel"
-                  id="phone"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  placeholder="Your phone number"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea
-                  id="message"
-                  rows="3"
+                <select
+                  name="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  placeholder="Your message"
+                >
+                  <option value="">What type of property are you looking for?</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Plot">Plot</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="preferredLocation"
+                  placeholder="Preferred Location"
+                  value={formData.preferredLocation}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <select
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                >
+                  <option value="">Select Budget Range</option>
+                  <option value="Under 50 Lakhs">Under 50 Lakhs</option>
+                  <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
+                  <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
+                  <option value="2 Cr - 5 Cr">2 Cr - 5 Cr</option>
+                  <option value="5 Cr & Above">5 Cr & Above</option>
+                </select>
+              </div>
+              <div>
+                <textarea
+                  name="requirements"
+                  placeholder="Specific Requirements (e.g., 3BHK, Garden, Pool, etc.)"
+                  rows="2"
+                  value={formData.requirements}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none"
                 ></textarea>
+              </div>
+              <div>
+                <select
+                  name="language"
+                  value={formData.language}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                >
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                </select>
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#C08735] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#C08735]/80 transition-colors"
+                disabled={isSubmitting}
+                className={`w-full bg-[#C08735] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#C08735]/80 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Get Free Consultation'}
               </button>
             </form>
           </div>
