@@ -10,9 +10,9 @@ export default function HeroSection() {
     name: '',
     email: '',
     phone: '',
-    propertyType: '',
+    propertyType: 'Select Property Type',
     preferredLocation: '',
-    budget: '',
+    budget: 'Select Budget Range',
     requirements: '',
     language: 'English'
   });
@@ -71,9 +71,9 @@ export default function HeroSection() {
         name: '',
         email: '',
         phone: '',
-        propertyType: '',
+        propertyType: 'Select Property Type',
         preferredLocation: '',
-        budget: '',
+        budget: 'Select Budget Range',
         requirements: '',
         language: 'English'
       });
@@ -224,7 +224,7 @@ export default function HeroSection() {
                   value={formData.propertyType}
                   onChange={handleChange}
                 >
-                  <option value=""></option>
+                  <option value="Select Property Type">Select Property Type</option>
                   <option value="Apartment">Apartment</option>
                   <option value="Villa">Villa</option>
                   <option value="Plot">Plot</option>
@@ -240,7 +240,7 @@ export default function HeroSection() {
                   value={formData.budget}
                   onChange={handleChange}
                 >
-                  <option value=""></option>
+                  <option value="Select Budget Range">Select Budget Range</option>
                   <option value="Under 50 Lakhs">Under 50 Lakhs</option>
                   <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
                   <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
