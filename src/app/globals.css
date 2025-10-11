@@ -681,4 +681,47 @@ iper Custom Styles */
 .properties-swiper .swiper-slide {
     width: 24.5rem !important;
 }
+}/* 
+Contact Form Mobile Fixes */
+@media (max-width: 768px) {
+  #contact-us {
+    min-height: 100vh !important;
+    padding: 1rem 0 !important;
+  }
+  
+  #contact-us .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .contact-form .floating-input.dark {
+    margin-bottom: 1rem !important;
+  }
+  
+  .contact-form .floating-input.dark input,
+  .contact-form .floating-input.dark select,
+  .contact-form .floating-input.dark textarea {
+    padding: 0.875rem 0.75rem 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .contact-form .floating-input.dark label {
+    font-size: 0.75rem !important;
+    left: 0.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #contact-us {
+    padding: 0.5rem 0 !important;
+  }
+  
+  #contact-us .grid {
+    gap: 0.5rem !important;
+  }
+  
+  .contact-form {
+    padding: 0 !important;
+  }
 }

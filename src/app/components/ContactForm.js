@@ -87,7 +87,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center" id='contact-us'>
+    <section className="relative min-h-screen flex items-center overflow-hidden" id='contact-us'>
       {/* Background Image */}
       <div className="absolute inset-0">
         <div className="w-full h-full bg-[#252525] to-transparent relative">
@@ -100,25 +100,25 @@ export default function ContactForm() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto w-full md:p-[20px]">
+      <div className="relative z-10 container mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
-          <div className="max-w-[33rem]">
-            <h2 className="lg:text-[28px] md:text-5xl font-[600] text-white text-center mb-4 leading-tight">
+          <div className="w-full max-w-[33rem] mx-auto lg:mx-0">
+            <h2 className="text-2xl sm:text-3xl lg:text-[28px] font-[600] text-white text-center mb-4 leading-tight">
               Let&apos;s Find Your Dream Property
             </h2>
-            <p className="text-gray-300 mb-8 text-lg text-center">
+            <p className="text-gray-300 mb-6 lg:mb-8 text-base lg:text-lg text-center">
               Get in touch with our experts today
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-2 contact-form">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 contact-form">
               {submitStatus.message && (
                 <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                   {submitStatus.message}
                 </div>
               )}
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
                 <div className="floating-input dark">
                   <input
                     type="text"
