@@ -27,7 +27,6 @@ export default function ContactForm() {
   const submitFormData = async (formData) => {
     const apiUrl = "https://script.google.com/macros/s/AKfycbzjfJIq4C1YlhKROMGY2AmsLTK-uvAUGaxNSbcgtcTycRzViy-j6V25c1ZAC0tLc9y5/exec";
     
-    // Map form data to match your API structure
     const payload = {
       SheetID: "105KuxnDPJqhBSk0xGiLfro6KVbq4OMxTTuET-eSSj6k",
       Field: {
@@ -43,16 +42,15 @@ export default function ContactForm() {
       }
     };
 
-    const response = await fetch(apiUrl, {
+    await fetch(apiUrl, {
       method: 'POST',
-      mode: 'no-cors', // This bypasses CORS but you won't get response data
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     });
 
-    // With no-cors mode, we can't read the response, so we assume success
     return { success: true };
   };
 
@@ -67,7 +65,6 @@ export default function ContactForm() {
         success: true, 
         message: 'Thank you for your submission! We will contact you soon.' 
       });
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -90,10 +87,10 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative lg:min-h-screen min-h-[100vh]  flex items-center" id='contact-us'>
+    <section className="relative min-h-screen flex items-center" id='contact-us'>
       {/* Background Image */}
       <div className="absolute inset-0">
-        <div className="w-full lg:h-full h-[100vh] bg-[#252525] lg:pb-0 pb-20 to-transparent relative">
+        <div className="w-full h-full bg-[#252525] to-transparent relative">
           {/* City background simulation */}
           <div className="absolute right-0 top-0 w-1/2 h-full bg-contact-us">
             {/* Simple city skyline simulation */}
@@ -103,10 +100,10 @@ export default function ContactForm() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto  w-full lg:p-0 p-[19px]">
+      <div className="relative z-10 container mx-auto w-full md:p-[20px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
-          <div className="lg:max-w-[33rem] max-w-auto">
+          <div className="max-w-[33rem]">
             <h2 className="lg:text-[28px] md:text-5xl font-[600] text-white text-center mb-4 leading-tight">
               Let&apos;s Find Your Dream Property
             </h2>
@@ -121,7 +118,7 @@ export default function ContactForm() {
                 </div>
               )}
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="floating-input dark">
                   <input
                     type="text"

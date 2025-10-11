@@ -163,7 +163,7 @@ export default function HeroSection() {
               </div>
             )}
             
-            <form onSubmit={handleSubmit} className="space-y-2 hero-form">
+            <form onSubmit={handleSubmit} className="space-y-0 hero-form">
               {/* Name and Email Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-4">
                 <div className="floating-input">
@@ -190,9 +190,9 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              {/* Phone and Preferred Location Row */}
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                <div>
+
+                <div className='grid grid-cols-1 md:grid-col-1 gap-4'>
+                  <div className='mb-5'>
                   <PhoneInput
                     placeholder="Phone Number"
                     value={formData.phone}
@@ -205,6 +205,11 @@ export default function HeroSection() {
                     required
                   />
                 </div>
+              </div>
+
+              {/* Phone and Preferred Location Row */}
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+              
                 <div className="floating-input">
                   <input
                     type="text"
@@ -215,7 +220,21 @@ export default function HeroSection() {
                   />
                   <label>Preferred Location</label>
                 </div>
+
+                    <div className="floating-input">
+                <textarea
+                  name="requirements"
+                  placeholder=" "
+                  rows="3"
+                  value={formData.requirements}
+                  onChange={handleChange}
+                  className="resize-none"
+                ></textarea>
+                <label>Specific Requirements</label>
               </div>
+              </div>
+
+            
 
               {/* Property Type */}
               <div className="floating-input mb-2">
@@ -251,17 +270,7 @@ export default function HeroSection() {
               </div>
 
               {/* Requirements */}
-              <div className="floating-input">
-                <textarea
-                  name="requirements"
-                  placeholder=" "
-                  rows="3"
-                  value={formData.requirements}
-                  onChange={handleChange}
-                  className="resize-none"
-                ></textarea>
-                <label>Specific Requirements</label>
-              </div>
+          
 
               {/* Language */}
               <div className="floating-input">
