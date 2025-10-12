@@ -86,6 +86,131 @@ export default function ContactForm() {
     }
   };
 
+  // Form component for reusability
+  const FormComponent = ({ isMobile = false }) => (
+    <form onSubmit={handleSubmit} className={`space-y-3 sm:space-y-4 contact-form ${isMobile ? 'mobile-form' : ''}`}>
+      {submitStatus.message && (
+        <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+          {submitStatus.message}
+        </div>
+      )}
+      
+      <div className={`grid ${isMobile ? 'grid-cols-1 gap-3' : 'grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4'}`}>
+        <div className="floating-input dark">
+          <input
+            type="text"
+            name="name"
+            placeholder=" "
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <label>Your Name</label>
+        </div>
+        <div className="floating-input dark">
+          <input
+            type="email"
+            name="email"
+            placeholder=" "
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label>Email Address</label>
+        </div>
+      </div>
+
+      <div>
+        <PhoneInput
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChange={(value) => setFormData({...formData, phone: value || ''})}
+          defaultCountry="IN"
+          international
+          countryCallingCodeEditable={false}
+          className="phone-input-contact"
+          inputClassName={`w-full px-4 ${isMobile ? 'py-3' : 'py-4'} bg-gray-800 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none text-sm`}
+          required
+        />
+      </div>
+
+      <div className="floating-input dark">
+        <select
+          name="propertyType"
+          value={formData.propertyType}
+          onChange={handleChange}
+        >
+          <option value="Select Property Type">Select Property Type</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Villa">Villa</option>
+          <option value="Plot">Plot</option>
+          <option value="Commercial">Commercial</option>
+        </select>
+        <label>Property Type</label>
+      </div>
+
+      <div className="floating-input dark">
+        <input
+          type="text"
+          name="preferredLocation"
+          placeholder=" "
+          value={formData.preferredLocation}
+          onChange={handleChange}
+        />
+        <label>Preferred Location</label>
+      </div>
+
+      <div className="floating-input dark">
+        <select
+          name="budget"
+          value={formData.budget}
+          onChange={handleChange}
+        >
+          <option value="Select Budget Range">Select Budget Range</option>
+          <option value="Under 50 Lakhs">Under 50 Lakhs</option>
+          <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
+          <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
+          <option value="2 Cr - 5 Cr">2 Cr - 5 Cr</option>
+          <option value="5 Cr & Above">5 Cr & Above</option>
+        </select>
+        <label>Budget Range</label>
+      </div>
+
+      <div className="floating-input dark">
+        <textarea
+          name="requirements"
+          placeholder=" "
+          rows={isMobile ? "2" : "3"}
+          value={formData.requirements}
+          onChange={handleChange}
+          className="resize-none"
+        ></textarea>
+        <label>Specific Requirements</label>
+      </div>
+
+      <div className="floating-input dark">
+        <select
+          name="language"
+          value={formData.language}
+          onChange={handleChange}
+        >
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+        <label>Language</label>
+      </div>
+
+      {/* Submit Button */}
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className={`w-full bg-[#AC9020] text-white ${isMobile ? 'py-3 px-4' : 'py-4 px-6'} rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 ${isMobile ? 'text-base' : 'text-lg'} ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+      >
+        {isSubmitting ? 'Submitting...' : 'Get a Free Consultation'}
+      </button>
+    </form>
+  );
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" id='contact-us'>
       {/* Background Image */}
@@ -99,8 +224,28 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+      {/* Mobile Layout - Visible only on mobile */}
+      <div className="lg:hidden relative z-10 w-full px-4 py-6">
+        <div className="max-w-md mx-auto">
+          {/* Mobile Header */}
+          <div className="text-center mb-6">
+            <h2 className="text-xl font-[600] text-white mb-2 leading-tight">
+              Find Your Dream Property
+            </h2>
+            <p className="text-gray-300 text-sm">
+              Get expert consultation today
+            </p>
+          </div>
+
+          {/* Mobile Form */}
+          <div className="bg-[#252525] rounded-2xl p-4 ">
+            <FormComponent isMobile={true} />
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout - Hidden on mobile */}
+      <div className="hidden lg:block relative z-10 container mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Form */}
           <div className="w-full max-w-[33rem] mx-auto lg:mx-0">
@@ -111,127 +256,7 @@ export default function ContactForm() {
               Get in touch with our experts today
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 contact-form">
-              {submitStatus.message && (
-                <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                  {submitStatus.message}
-                </div>
-              )}
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
-                <div className="floating-input dark">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder=" "
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                  <label>Your Name</label>
-                </div>
-                <div className="floating-input dark">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder=" "
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                  <label>Email Address</label>
-                </div>
-              </div>
-
-              <div>
-                <PhoneInput
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(value) => setFormData({...formData, phone: value || ''})}
-                  defaultCountry="IN"
-                  international
-                  countryCallingCodeEditable={false}
-                  className="phone-input-contact"
-                  inputClassName="w-full px-4 py-4 bg-gray-800 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none text-sm"
-                  required
-                />
-              </div>
-
-              <div className="floating-input dark">
-                <select
-                  name="propertyType"
-                  value={formData.propertyType}
-                  onChange={handleChange}
-                >
-                  <option value="Select Property Type">Select Property Type</option>
-                  <option value="Apartment">Apartment</option>
-                  <option value="Villa">Villa</option>
-                  <option value="Plot">Plot</option>
-                  <option value="Commercial">Commercial</option>
-                </select>
-                <label>Property Type</label>
-              </div>
-
-              <div className="floating-input dark">
-                <input
-                  type="text"
-                  name="preferredLocation"
-                  placeholder=" "
-                  value={formData.preferredLocation}
-                  onChange={handleChange}
-                />
-                <label>Preferred Location</label>
-              </div>
-
-              <div className="floating-input dark">
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-                  <option value="Select Budget Range">Select Budget Range</option>
-                  <option value="Under 50 Lakhs">Under 50 Lakhs</option>
-                  <option value="50 Lakhs - 1 Cr">50 Lakhs - 1 Cr</option>
-                  <option value="1 Cr - 2 Cr">1 Cr - 2 Cr</option>
-                  <option value="2 Cr - 5 Cr">2 Cr - 5 Cr</option>
-                  <option value="5 Cr & Above">5 Cr & Above</option>
-                </select>
-                <label>Budget Range</label>
-              </div>
-
-              <div className="floating-input dark">
-                <textarea
-                  name="requirements"
-                  placeholder=" "
-                  rows="3"
-                  value={formData.requirements}
-                  onChange={handleChange}
-                  className="resize-none"
-                ></textarea>
-                <label>Specific Requirements</label>
-              </div>
-
-              <div className="floating-input dark">
-                <select
-                  name="language"
-                  value={formData.language}
-                  onChange={handleChange}
-                >
-                  <option value="English">English</option>
-                  <option value="Hindi">Hindi</option>
-                </select>
-                <label>Language</label>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full bg-[#AC9020] text-white py-4 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 text-lg ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-              >
-                {isSubmitting ? 'Submitting...' : 'Get a Free Consultation'}
-              </button>
-            </form>
+            <FormComponent isMobile={false} />
           </div>
 
           {/* Right Side - Image Space */}
