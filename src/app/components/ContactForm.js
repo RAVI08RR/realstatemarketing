@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
@@ -17,12 +17,13 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  }, []);
 
   const submitFormData = async (formData) => {
     const apiUrl = "https://script.google.com/macros/s/AKfycbzjfJIq4C1YlhKROMGY2AmsLTK-uvAUGaxNSbcgtcTycRzViy-j6V25c1ZAC0tLc9y5/exec";
@@ -54,7 +55,14 @@ export default function ContactForm() {
     return { success: true };
   };
 
-  const handleSubmit = async (e) => {
+  const handlePhoneChange = useCallback((value) => {
+    setFormData(prev => ({
+      ...prev,
+      phone: value || ''
+    }));
+  }, []);
+
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ success: false, message: '' });
@@ -84,18 +92,18 @@ export default function ContactForm() {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [formData]);
 
-  // Form component for reusability
-  const FormComponent = ({ isMobile = false }) => (
-    <form onSubmit={handleSubmit} className={`space-y-3 sm:space-y-4 contact-form ${isMobile ? 'mobile-form' : ''}`}>
+  const renderForm = (isMobile = false) => (
+    <form onSubmit={handleSubmit} className={`space-y-0 contact-form ${isMobile ? 'mobile-form' : ''}`}>
       {submitStatus.message && (
         <div className={`p-3 rounded-lg mb-4 ${submitStatus.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
           {submitStatus.message}
         </div>
       )}
       
-      <div className={`grid ${isMobile ? 'grid-cols-1 gap-3' : 'grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4'}`}>
+      {/* Name and Email Row */}
+      <div className={`grid ${isMobile ? 'grid-cols-1 gap-3 mb-4' : 'grid-cols-1 md:grid-cols-2 lg:gap-4 mb-4'}`}>
         <div className="floating-input dark">
           <input
             type="text"
@@ -104,6 +112,9 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
+            autoComplete="name"
+            autoCorrect="off"
+            autoCapitalize="words"
           />
           <label>Your Name</label>
         </div>
@@ -115,26 +126,64 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
+            autoComplete="email"
+            autoCorrect="off"
+            autoCapitalize="off"
           />
           <label>Email Address</label>
         </div>
       </div>
 
-      <div>
-        <PhoneInput
-          placeholder="Phone Number"
-          value={formData.phone}
-          onChange={(value) => setFormData({...formData, phone: value || ''})}
-          defaultCountry="IN"
-          international
-          countryCallingCodeEditable={false}
-          className="phone-input-contact"
-          inputClassName={`w-full px-4 ${isMobile ? 'py-3' : 'py-4'} bg-gray-800 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none text-sm`}
-          required
-        />
+      {/* Phone Number */}
+      <div className="grid grid-cols-1 gap-4 mb-4">
+        <div className="mb-1">
+          <PhoneInput
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handlePhoneChange}
+            defaultCountry="IN"
+            international
+            countryCallingCodeEditable={false}
+            className="phone-input-contact"
+            inputClassName={`w-full px-4 ${isMobile ? 'py-3' : 'py-4'} bg-gray-800 border-2 border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-amber-500 focus:outline-none text-sm`}
+            required
+          />
+        </div>
       </div>
 
-      <div className="floating-input dark">
+      {/* Preferred Location and Requirements Row */}
+      <div className={`grid ${isMobile ? 'grid-cols-1 gap-3 mb-4' : 'grid-cols-1 lg:grid-cols-2 lg:gap-4 mb-4'}`}>
+        <div className="floating-input dark">
+          <input
+            type="text"
+            name="preferredLocation"
+            placeholder=" "
+            value={formData.preferredLocation}
+            onChange={handleChange}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="words"
+          />
+          <label>Preferred Location</label>
+        </div>
+        <div className="floating-input dark">
+          <input
+            type="text"
+            name="requirements"
+            placeholder=" "
+            value={formData.requirements}
+            onChange={handleChange}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+          />
+          <label>Specific Requirements</label>
+        </div>
+      </div>
+
+      {/* Property Type */}
+      <div className="floating-input dark mb-4">
         <select
           name="propertyType"
           value={formData.propertyType}
@@ -149,18 +198,8 @@ export default function ContactForm() {
         <label>Property Type</label>
       </div>
 
-      <div className="floating-input dark">
-        <input
-          type="text"
-          name="preferredLocation"
-          placeholder=" "
-          value={formData.preferredLocation}
-          onChange={handleChange}
-        />
-        <label>Preferred Location</label>
-      </div>
-
-      <div className="floating-input dark">
+      {/* Budget Range */}
+      <div className="floating-input dark mb-4">
         <select
           name="budget"
           value={formData.budget}
@@ -176,19 +215,8 @@ export default function ContactForm() {
         <label>Budget Range</label>
       </div>
 
-      <div className="floating-input dark">
-        <textarea
-          name="requirements"
-          placeholder=" "
-          rows={isMobile ? "2" : "3"}
-          value={formData.requirements}
-          onChange={handleChange}
-          className="resize-none"
-        ></textarea>
-        <label>Specific Requirements</label>
-      </div>
-
-      <div className="floating-input dark">
+      {/* Language */}
+      <div className="floating-input dark mb-4">
         <select
           name="language"
           value={formData.language}
@@ -204,9 +232,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full bg-[#AC9020] text-white ${isMobile ? 'py-3 px-4' : 'py-4 px-6'} rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-300 ${isMobile ? 'text-base' : 'text-lg'} ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+        className={`w-full bg-[#AC9020] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#AC9020]/80 transition-colors ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
       >
-        {isSubmitting ? 'Submitting...' : 'Get a Free Consultation'}
+        {isSubmitting ? 'Sending...' : 'Get Free Consultation'}
       </button>
     </form>
   );
@@ -239,7 +267,7 @@ export default function ContactForm() {
 
           {/* Mobile Form */}
           <div className="bg-[#252525] rounded-2xl p-4 ">
-            <FormComponent isMobile={true} />
+            {renderForm(true)}
           </div>
         </div>
       </div>
@@ -256,7 +284,7 @@ export default function ContactForm() {
               Get in touch with our experts today
             </p>
 
-            <FormComponent isMobile={false} />
+            {renderForm(false)}
           </div>
 
           {/* Right Side - Image Space */}
