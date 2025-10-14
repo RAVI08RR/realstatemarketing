@@ -94,18 +94,18 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-start">
           {/* Left Content */}
           <div className="text-white max-w-2xl">
-            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] mb-6 lg:leading-[1.3]">
+            <h1 className="text-[2rem] md:text-5xl lg:text-[3rem] font-[600] lg:mb-6 mb-2 lg:leading-[1.3] leading-[35px]">
               Find Your Perfect 
               <br/>
               Home with DreamNest
             </h1>
             
-            <p className="text-[14px] mb-8 text-gray-200">
+            <p className="text-[14px] lg:mb-8 mb-5 text-gray-200">
               Discover a wide range of properties that match your lifestyle and budget. 
               We make finding your dream home simple and stress-free.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="flex flex-wrap gap-4 lg:mb-12 mb-5">
               <button className="bg-[#AC9020] text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-[#AC9020]/80 transition-colors">
                 <a href='#featured-property'>
                   Explore Properties
