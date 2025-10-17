@@ -222,14 +222,15 @@ export default function HeroSection() {
                 </div>
 
                     <div className="floating-input">
-                <textarea
+                <input
+                 type="text"
                   name="requirements"
                   placeholder=" "
-                  rows="3"
+              
                   value={formData.requirements}
                   onChange={handleChange}
                   className="resize-none"
-                ></textarea>
+                />
                 <label>Specific Requirements</label>
               </div>
               </div>
