@@ -27,31 +27,31 @@ export default function HeroSection() {
   };
 
   const submitHeroFormData = async (formData) => {
-    const apiUrl = "https://script.google.com/macros/s/AKfycbzjfJIq4C1YlhKROMGY2AmsLTK-uvAUGaxNSbcgtcTycRzViy-j6V25c1ZAC0tLc9y5/exec";
+    const apiUrl = "https://n8n.srv1029267.hstgr.cloud/webhook/b652fd37-6679-4d9a-a3ab-ade17814fcb5";
     
     const payload = {
-      SheetID: "105KuxnDPJqhBSk0xGiLfro6KVbq4OMxTTuET-eSSj6k",
-      Field: {
-        Name: formData.name,
-        Email: formData.email,
-        Phone: formData.phone,
-        "kind of property": formData.propertyType || "",
-        "preferred location": formData.preferredLocation || "",
-        "budget range": formData.budget || "",
-        "must-have": formData.requirements || "",
-        language: formData.language,
-        Status: "RAW"
-      }
+      Email: formData.email,
+      FirstName: formData.name.split(' ')[0] || formData.name,
+      LastName: formData.name.split(' ').slice(1).join(' ') || '',
+      PhoneNumber: formData.phone,
+      PreferredLanguage: formData.language === 'Hindi' ? 'hi' : 'en',
+      PropertyType: formData.propertyType !== 'Select Property Type' ? formData.propertyType : '',
+      PreferredLocation: formData.preferredLocation || '',
+      BudgetRange: formData.budget !== 'Select Budget Range' ? formData.budget : '',
+      Requirements: formData.requirements || ''
     };
 
-    await fetch(apiUrl, {
+    const response = await fetch(apiUrl, {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     return { success: true };
   };

@@ -56,7 +56,7 @@ export default function RealEstateAdvisors() {
             </div>
             
             {/* Middle Section */}
-            <div className="bg-gray-50 rounded-lg p-8 flex items-center justify-center gap-6 sm:flex-col adv-section">
+            <div className="bg-gray-50 rounded-lg p-8 flex items-center justify-center gap-6  adv-section">
               <div className="flex-1">
                 <p className="text-gray-800 leading-relaxed mb-2 text-[14px]">
                 At Your Trusted Real Estate Advisors, we make your property journey smooth, transparent, and stress-free from start to finish                </p>
